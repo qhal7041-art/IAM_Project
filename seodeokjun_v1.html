@@ -206,11 +206,11 @@
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
                 <a href="#hero" class="nav-link">시작</a>
-                <a href="#about" class="nav-link">최애시(소낙비)</a>
+                <a href="#about" class="nav-link">소낙비(최애시)</a>
                 <a href="#curation" class="nav-link">오늘의 문장</a>
                 <a href="#gallery" class="nav-link">대표시선</a>
                 <a href="#poet" class="nav-link">시인 소개</a>
-                <a href="#books" class="nav-link">저서 소개</a>
+                <a href="#books" class="nav-link">저서소개</a>
                 <a href="#board" class="nav-link">소통 공간</a>
             </nav>
 
@@ -234,11 +234,11 @@
         <!-- Mobile Navigation Menu -->
         <div id="mobileMenu" class="hidden md:hidden bg-white/95 dark:bg-[#0B131E]/95 backdrop-blur-lg border-b border-slate-200/50 dark:border-slate-800/50 flex flex-col px-6 py-5 space-y-4 shadow-xl max-h-[80vh] overflow-y-auto">
             <a href="#hero" class="text-[#2C5E8A] dark:text-[#8CBAE6] font-poetic font-semibold text-lg py-1 border-b border-slate-100 dark:border-slate-800" onclick="toggleMobileMenu()">시작</a>
-            <a href="#about" class="text-[#2C5E8A] dark:text-[#8CBAE6] font-poetic font-semibold text-lg py-1 border-b border-slate-100 dark:border-slate-800" onclick="toggleMobileMenu()">최애시(소낙비)</a>
+            <a href="#about" class="text-[#2C5E8A] dark:text-[#8CBAE6] font-poetic font-semibold text-lg py-1 border-b border-slate-100 dark:border-slate-800" onclick="toggleMobileMenu()">소낙비(최애시)</a>
             <a href="#curation" class="text-[#2C5E8A] dark:text-[#8CBAE6] font-poetic font-semibold text-lg py-1 border-b border-slate-100 dark:border-slate-800" onclick="toggleMobileMenu()">오늘의 문장</a>
             <a href="#gallery" class="text-[#2C5E8A] dark:text-[#8CBAE6] font-poetic font-semibold text-lg py-1 border-b border-slate-100 dark:border-slate-800" onclick="toggleMobileMenu()">대표시선</a>
             <a href="#poet" class="text-[#2C5E8A] dark:text-[#8CBAE6] font-poetic font-semibold text-lg py-1 border-b border-slate-100 dark:border-slate-800" onclick="toggleMobileMenu()">시인 소개</a>
-            <a href="#books" class="text-[#2C5E8A] dark:text-[#8CBAE6] font-poetic font-semibold text-lg py-1 border-b border-slate-100 dark:border-slate-800" onclick="toggleMobileMenu()">저서 소개</a>
+            <a href="#books" class="text-[#2C5E8A] dark:text-[#8CBAE6] font-poetic font-semibold text-lg py-1 border-b border-slate-100 dark:border-slate-800" onclick="toggleMobileMenu()">저서소개</a>
             <a href="#board" class="text-[#2C5E8A] dark:text-[#8CBAE6] font-poetic font-semibold text-lg py-1 border-b border-slate-100 dark:border-slate-800" onclick="toggleMobileMenu()">소통 공간</a>
             <a href="https://www.instagram.com/seodeokjun/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-xl bg-[#2C5E8A] dark:bg-[#3B72A1] text-white text-sm font-semibold hover:bg-[#1E3345]" onclick="toggleMobileMenu()">
                 <i class="fa-brands fa-instagram"></i> 공식 인스타그램 방문
@@ -352,23 +352,23 @@
                 <p class="text-xs sm:text-sm text-[#1E3345] dark:text-slate-300 font-bold max-w-md mx-auto transition-colors">지금 그대 마음에 물든 감정의 조각을 골라주세요.</p>
             </div>
 
-            <!-- Emotion selection buttons -->
-            <div id="emotionSelector" class="flex flex-wrap justify-center gap-3 sm:gap-4 max-w-2xl mx-auto mb-10 transition-all">
-                <button onclick="curateSentence('flutter')" class="group flex items-center gap-2 px-5 py-3 rounded-full bg-white/80 dark:bg-slate-800/80 border border-peach-200/50 dark:border-slate-700 hover:border-[#FF8A65] dark:hover:border-[#FFA085] text-[#2C5E8A] dark:text-slate-200 font-poetic font-bold text-sm xs:text-base hover:scale-105 active:scale-95 transition-all shadow-md hover:shadow-lg">
-                    <span class="w-2.5 h-2.5 rounded-full bg-[#FF8A65] group-hover:animate-ping"></span>
-                    설렘 가득한 날
+            <!-- Emotion selection buttons: Balanced 2x2 grid on mobile, 1x4 grid on PC -->
+            <div id="emotionSelector" class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-2xl mx-auto mb-10 transition-all">
+                <button onclick="curateSentence('flutter')" class="group flex items-center justify-center gap-2 px-3 xs:px-5 py-3.5 rounded-full bg-white/80 dark:bg-slate-800/80 border border-peach-200/50 dark:border-slate-700 hover:border-[#FF8A65] dark:hover:border-[#FFA085] text-[#2C5E8A] dark:text-slate-200 font-poetic font-bold text-xs xs:text-sm sm:text-base hover:scale-105 active:scale-95 transition-all shadow-md hover:shadow-lg w-full">
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#FF8A65] group-hover:animate-ping shrink-0"></span>
+                    설렘 <br>가득한 날
                 </button>
-                <button onclick="curateSentence('yearning')" class="group flex items-center gap-2 px-5 py-3 rounded-full bg-white/80 dark:bg-slate-800/80 border border-blue-200/50 dark:border-slate-700 hover:border-[#2C5E8A] dark:hover:border-[#8CBAE6] text-[#2C5E8A] dark:text-slate-200 font-poetic font-bold text-sm xs:text-base hover:scale-105 active:scale-95 transition-all shadow-md hover:shadow-lg">
-                    <span class="w-2.5 h-2.5 rounded-full bg-[#2C5E8A] group-hover:animate-ping"></span>
-                    그리움에 잠긴 날
+                <button onclick="curateSentence('yearning')" class="group flex items-center justify-center gap-2 px-3 xs:px-5 py-3.5 rounded-full bg-white/80 dark:bg-slate-800/80 border border-blue-200/50 dark:border-slate-700 hover:border-[#2C5E8A] dark:hover:border-[#8CBAE6] text-[#2C5E8A] dark:text-slate-200 font-poetic font-bold text-xs xs:text-sm sm:text-base hover:scale-105 active:scale-95 transition-all shadow-md hover:shadow-lg w-full">
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#2C5E8A] group-hover:animate-ping shrink-0"></span>
+                    그리움에 <br>잠긴 날
                 </button>
-                <button onclick="curateSentence('lonely')" class="group flex items-center gap-2 px-5 py-3 rounded-full bg-white/80 dark:bg-slate-800/80 border border-indigo-200/50 dark:border-slate-700 hover:border-indigo-400 text-[#2C5E8A] dark:text-slate-200 font-poetic font-bold text-sm xs:text-base hover:scale-105 active:scale-95 transition-all shadow-md hover:shadow-lg">
-                    <span class="w-2.5 h-2.5 rounded-full bg-indigo-400 group-hover:animate-ping"></span>
-                    외로움이 번지는 날
+                <button onclick="curateSentence('lonely')" class="group flex items-center justify-center gap-2 px-3 xs:px-5 py-3.5 rounded-full bg-white/80 dark:bg-slate-800/80 border border-indigo-200/50 dark:border-slate-700 hover:border-indigo-400 text-[#2C5E8A] dark:text-slate-200 font-poetic font-bold text-xs xs:text-sm sm:text-base hover:scale-105 active:scale-95 transition-all shadow-md hover:shadow-lg w-full">
+                    <span class="w-2.5 h-2.5 rounded-full bg-indigo-400 group-hover:animate-ping shrink-0"></span>
+                    외로움이 <br>번지는 날
                 </button>
-                <button onclick="curateSentence('comfort')" class="group flex items-center gap-2 px-5 py-3 rounded-full bg-white/80 dark:bg-slate-800/80 border border-emerald-200/50 dark:border-slate-700 hover:border-emerald-400 text-[#2C5E8A] dark:text-slate-200 font-poetic font-bold text-sm xs:text-base hover:scale-105 active:scale-95 transition-all shadow-md hover:shadow-lg">
-                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 group-hover:animate-ping"></span>
-                    위로받고 싶은 날
+                <button onclick="curateSentence('comfort')" class="group flex items-center justify-center gap-2 px-3 xs:px-5 py-3.5 rounded-full bg-white/80 dark:bg-slate-800/80 border border-emerald-200/50 dark:border-slate-700 hover:border-emerald-400 text-[#2C5E8A] dark:text-slate-200 font-poetic font-bold text-xs xs:text-sm sm:text-base hover:scale-105 active:scale-95 transition-all shadow-md hover:shadow-lg w-full">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 group-hover:animate-ping shrink-0"></span>
+                    위로받고 <br>싶은 날
                 </button>
             </div>
 
@@ -700,7 +700,7 @@
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
             <div class="flex flex-col items-center md:items-start gap-2.5">
                 <span class="font-poetic text-sm sm:text-base font-bold text-[#E6F0FA] dark:text-[#8CBAE6] tracking-widest transition-colors">SEO DEOK JUN</span>
-                <p class="text-[10px] text-slate-400 dark:text-slate-500 max-w-[280px] xs:max-w-xs leading-relaxed font-medium">이 페이지는 서덕준 시인님을 좋아하는 한 팬이 수익창출 목적 없이 <br>헌정용으로 제작한 비공식 공간입니다.</p>
+                <p class="text-[10px] text-slate-400 dark:text-slate-500 max-w-[280px] xs:max-w-xs leading-relaxed font-medium">이 페이지는 서덕준 시인님을 좋아하는 한 팬이 수익창출 목적 없이 헌정용으로 제작한 비공식 공간입니다.</p>
                 <p class="text-[10px] text-slate-500">© 2026 Poet Seo Deok Jun. All rights reserved.</p>
             </div>
             

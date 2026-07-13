@@ -88,6 +88,23 @@
             animation: subtlePulse 3s infinite ease-in-out;
         }
 
+        /* 타이핑 효과를 위한 깜빡이는 커서 스타일 */
+        .cursor-blink::after {
+            content: '|';
+            margin-left: 2px;
+            display: inline-block;
+            animation: cursorBlink 0.9s infinite;
+            color: var(--color-accent-orange);
+        }
+        .dark .cursor-blink::after {
+            color: #FFA085;
+        }
+
+        @keyframes cursorBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
         /* Glassmorphism utility cards (Aesthetic adaptation for light and dark) */
         .glass-card {
             background: rgba(255, 255, 255, 0.55);
@@ -223,8 +240,8 @@
                 Poetry Portfolio of Seo Deok Jun
             </span>
             
-            <!-- Main Catchphrase with Poetic font -->
-            <h1 class="font-poetic text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-bold text-[#2C5E8A] dark:text-[#A1C7E8] leading-relaxed md:leading-relaxed tracking-wider mb-6 sm:mb-8 drop-shadow-sm transition-colors">
+            <!-- Main Catchphrase with Poetic font - Layout shift is prevented by min-height -->
+            <h1 id="typingTitle" class="font-poetic text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-bold text-[#2C5E8A] dark:text-[#A1C7E8] leading-relaxed md:leading-relaxed tracking-wider mb-6 sm:mb-8 drop-shadow-sm transition-colors min-h-[1.5em] md:min-h-[1.62em]">
                 그대의 여름이 될 문장들
             </h1>
             
@@ -781,6 +798,27 @@
             }, 3000);
         }
 
+        // 메인 타이틀 타이핑 애니메이션 실행 함수
+        function startTypingEffect() {
+            const titleElement = document.getElementById('typingTitle');
+            const text = "그대의 여름이 될 문장들";
+            titleElement.innerHTML = ""; // 초기 텍스트 비우기
+            titleElement.classList.add('cursor-blink');
+            let index = 0;
+            
+            function type() {
+                if (index < text.length) {
+                    titleElement.innerHTML += text.charAt(index);
+                    index++;
+                    // 사람이 실제로 타이핑하는 듯한 자연스러움을 주기 위해 속도를 무작위로 설정
+                    setTimeout(type, 130 + Math.random() * 100);
+                }
+            }
+            
+            // 페이지 진입 후 시각적으로 자연스럽게 시작되도록 딜레이 부여
+            setTimeout(type, 700);
+        }
+
         // Initialize Window Functions
         window.addEventListener('resize', resizeCanvas);
         
@@ -788,6 +826,7 @@
             initTheme();
             resizeCanvas();
             animateRain();
+            startTypingEffect(); // 타이핑 애니메이션 시작
         };
     </script>
 </body>

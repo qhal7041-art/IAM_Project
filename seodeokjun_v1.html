@@ -570,13 +570,10 @@
                     <!-- 3D Book Container -->
                     <div class="book-container w-32 h-48 cursor-pointer shrink-0">
                         <div class="book-spine w-full h-full relative" style="transform-style: preserve-3d;">
-                            <!-- Book Face -->
-                            <div class="absolute inset-0 bg-gradient-to-tr from-[#2C5E8A] to-[#4580B3] dark:from-[#1E3345] dark:to-[#36648B] rounded-r-lg shadow-xl p-3 flex flex-col justify-between text-white border-y border-r border-[#2C5E8A] dark:border-slate-800 transition-colors">
-                                <span class="text-[8px] tracking-widest opacity-80 uppercase">SEO DEOK JUN POEMS</span>
-                                <div class="my-auto text-center py-2">
-                                    <h4 class="font-poetic text-sm font-bold leading-relaxed">그대는 나의<br>여름이 되세요</h4>
-                                </div>
-                                <span class="text-[8px] opacity-75 text-right font-sans">위즈덤하우스</span>
+                            <!-- Book Face (Replaced with Real High-Res Cover Image) -->
+                            <div class="absolute inset-0 rounded-r-lg shadow-xl border-y border-r border-slate-300/40 dark:border-slate-700/40 overflow-hidden bg-cover bg-center" style="background-image: url('https://image.yes24.com/goods/124106315/XL');">
+                                <!-- Glossy light paper texture overlay -->
+                                <div class="absolute inset-0 bg-gradient-to-tr from-black/10 via-transparent to-white/10 pointer-events-none"></div>
                             </div>
                             <!-- Book Spine Depth Mockup -->
                             <div class="absolute left-0 top-0 h-full w-2 bg-[#1C4366] dark:bg-[#0F2233]" style="transform: rotateY(-90deg) translateX(-1px); transform-origin: left;"></div>
@@ -601,13 +598,10 @@
                     <!-- 3D Book Container -->
                     <div class="book-container w-32 h-48 cursor-pointer shrink-0">
                         <div class="book-spine w-full h-full relative" style="transform-style: preserve-3d;">
-                            <!-- Book Face -->
-                            <div class="absolute inset-0 bg-gradient-to-tr from-[#1D3547] to-[#3B5B73] dark:from-[#0B1520] dark:to-[#1E3345] rounded-r-lg shadow-xl p-3 flex flex-col justify-between text-white border-y border-r border-[#1D3547] dark:border-slate-800 transition-colors">
-                                <span class="text-[8px] tracking-widest opacity-80 uppercase">SEO DEOK JUN POEMS</span>
-                                <div class="my-auto text-center py-2">
-                                    <h4 class="font-poetic text-sm font-bold leading-relaxed">함께 추락하러<br>왔어요</h4>
-                                </div>
-                                <span class="text-[8px] opacity-75 text-right font-sans">위즈덤하우스</span>
+                            <!-- Book Face (Replaced with Real High-Res Cover Image) -->
+                            <div class="absolute inset-0 rounded-r-lg shadow-xl border-y border-r border-slate-300/40 dark:border-slate-700/40 overflow-hidden bg-cover bg-center" style="background-image: url('https://image.yes24.com/goods/180300458/XL');">
+                                <!-- Glossy light paper texture overlay -->
+                                <div class="absolute inset-0 bg-gradient-to-tr from-black/10 via-transparent to-white/10 pointer-events-none"></div>
                             </div>
                             <!-- Book Spine Depth Mockup -->
                             <div class="absolute left-0 top-0 h-full w-2 bg-[#0F1E29] dark:bg-[#070E14]" style="transform: rotateY(-90deg) translateX(-1px); transform-origin: left;"></div>
@@ -839,12 +833,12 @@
             mobileMenuBtn.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
         });
 
+        // Close menu on background click
         function toggleMobileMenu() {
             mobileMenu.classList.add('hidden');
             mobileMenuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
         }
 
-        // Close menu on background click
         document.addEventListener('click', (e) => {
             if (!header.contains(e.target)) {
                 toggleMobileMenu();

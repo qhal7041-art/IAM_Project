@@ -195,10 +195,11 @@
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
                 <a href="#hero" class="nav-link">시작</a>
                 <a href="#about" class="nav-link">소낙비(최애시)</a>
+                <a href="#curation" class="nav-link">오늘의 문장</a>
                 <a href="#gallery" class="nav-link">대표시선</a>
                 <a href="#poet" class="nav-link">시인 소개</a>
                 <a href="#books" class="nav-link">저서소개</a>
-                <a href="#comments" class="nav-link">방명록</a>
+                <a href="#board" class="nav-link">소통 공간</a>
             </nav>
 
             <!-- Action Buttons CTA Link & Theme Switcher -->
@@ -222,10 +223,11 @@
         <div id="mobileMenu" class="hidden md:hidden bg-white/95 dark:bg-[#0B131E]/95 backdrop-blur-lg border-b border-slate-200/50 dark:border-slate-800/50 flex flex-col px-6 py-5 space-y-4 shadow-xl max-h-[80vh] overflow-y-auto">
             <a href="#hero" class="text-[#2C5E8A] dark:text-[#8CBAE6] font-poetic font-semibold text-lg py-1 border-b border-slate-100 dark:border-slate-800" onclick="toggleMobileMenu()">시작</a>
             <a href="#about" class="text-[#2C5E8A] dark:text-[#8CBAE6] font-poetic font-semibold text-lg py-1 border-b border-slate-100 dark:border-slate-800" onclick="toggleMobileMenu()">소낙비(최애시)</a>
+            <a href="#curation" class="text-[#2C5E8A] dark:text-[#8CBAE6] font-poetic font-semibold text-lg py-1 border-b border-slate-100 dark:border-slate-800" onclick="toggleMobileMenu()">오늘의 문장</a>
             <a href="#gallery" class="text-[#2C5E8A] dark:text-[#8CBAE6] font-poetic font-semibold text-lg py-1 border-b border-slate-100 dark:border-slate-800" onclick="toggleMobileMenu()">대표시선</a>
             <a href="#poet" class="text-[#2C5E8A] dark:text-[#8CBAE6] font-poetic font-semibold text-lg py-1 border-b border-slate-100 dark:border-slate-800" onclick="toggleMobileMenu()">시인 소개</a>
             <a href="#books" class="text-[#2C5E8A] dark:text-[#8CBAE6] font-poetic font-semibold text-lg py-1 border-b border-slate-100 dark:border-slate-800" onclick="toggleMobileMenu()">저서소개</a>
-            <a href="#comments" class="text-[#2C5E8A] dark:text-[#8CBAE6] font-poetic font-semibold text-lg py-1 border-b border-slate-100 dark:border-slate-800" onclick="toggleMobileMenu()">방명록</a>
+            <a href="#board" class="text-[#2C5E8A] dark:text-[#8CBAE6] font-poetic font-semibold text-lg py-1 border-b border-slate-100 dark:border-slate-800" onclick="toggleMobileMenu()">소통 공간</a>
             <a href="https://www.instagram.com/seodeokjun/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-xl bg-[#2C5E8A] dark:bg-[#3B72A1] text-white text-sm font-semibold hover:bg-[#1E3345]" onclick="toggleMobileMenu()">
                 <i class="fa-brands fa-instagram"></i> 공식 인스타그램 방문
             </a>
@@ -324,6 +326,90 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- Curation Section (Interactive Genuine Emotion Card Picker) -->
+    <section id="curation" class="py-16 xs:py-24 relative px-4 xs:px-6 z-10 bg-gradient-to-b from-transparent via-[#E6F0FA]/20 dark:via-slate-900/10 to-transparent transition-colors">
+        <div class="max-w-4xl mx-auto w-full">
+            <div class="text-center mb-10 xs:mb-14">
+                <span class="text-[10px] sm:text-xs font-bold text-[#FF8A65] dark:text-[#FFA085] tracking-widest uppercase block mb-3 transition-colors">Interactive Curation</span>
+                <h2 class="font-poetic text-2xl sm:text-3xl md:text-4xl font-bold text-[#2C5E8A] dark:text-[#A1C7E8] transition-colors">오늘, 그대의 여름을 위한 문장</h2>
+                <div class="w-8 h-[2px] bg-[#FF8A65] dark:bg-[#FFA085] mx-auto my-3 sm:my-4 transition-colors"></div>
+                <p class="text-xs sm:text-sm text-[#1E3345] dark:text-slate-300 font-bold max-w-md mx-auto transition-colors">지금 그대 마음에 물든 감정의 조각을 골라주세요.</p>
+            </div>
+
+            <!-- Emotion selection buttons -->
+            <div id="emotionSelector" class="flex flex-wrap justify-center gap-3 sm:gap-4 max-w-2xl mx-auto mb-10 transition-all">
+                <button onclick="curateSentence('flutter')" class="group flex items-center gap-2 px-5 py-3 rounded-full bg-white/80 dark:bg-slate-800/80 border border-peach-200/50 dark:border-slate-700 hover:border-[#FF8A65] dark:hover:border-[#FFA085] text-[#2C5E8A] dark:text-slate-200 font-poetic font-bold text-sm xs:text-base hover:scale-105 active:scale-95 transition-all shadow-md hover:shadow-lg">
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#FF8A65] group-hover:animate-ping"></span>
+                    설렘 가득한 날
+                </button>
+                <button onclick="curateSentence('yearning')" class="group flex items-center gap-2 px-5 py-3 rounded-full bg-white/80 dark:bg-slate-800/80 border border-blue-200/50 dark:border-slate-700 hover:border-[#2C5E8A] dark:hover:border-[#8CBAE6] text-[#2C5E8A] dark:text-slate-200 font-poetic font-bold text-sm xs:text-base hover:scale-105 active:scale-95 transition-all shadow-md hover:shadow-lg">
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#2C5E8A] group-hover:animate-ping"></span>
+                    그리움에 잠긴 날
+                </button>
+                <button onclick="curateSentence('lonely')" class="group flex items-center gap-2 px-5 py-3 rounded-full bg-white/80 dark:bg-slate-800/80 border border-indigo-200/50 dark:border-slate-700 hover:border-indigo-400 text-[#2C5E8A] dark:text-slate-200 font-poetic font-bold text-sm xs:text-base hover:scale-105 active:scale-95 transition-all shadow-md hover:shadow-lg">
+                    <span class="w-2.5 h-2.5 rounded-full bg-indigo-400 group-hover:animate-ping"></span>
+                    외로움이 번지는 날
+                </button>
+                <button onclick="curateSentence('comfort')" class="group flex items-center gap-2 px-5 py-3 rounded-full bg-white/80 dark:bg-slate-800/80 border border-emerald-200/50 dark:border-slate-700 hover:border-emerald-400 text-[#2C5E8A] dark:text-slate-200 font-poetic font-bold text-sm xs:text-base hover:scale-105 active:scale-95 transition-all shadow-md hover:shadow-lg">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 group-hover:animate-ping"></span>
+                    위로받고 싶은 날
+                </button>
+            </div>
+
+            <!-- Card generation output container -->
+            <div id="curationCardContainer" class="hidden max-w-md mx-auto relative group">
+                <!-- Blurred background aura representing emotion color -->
+                <div id="cardAura" class="absolute inset-0 rounded-[2.5rem] blur-2xl opacity-20 group-hover:opacity-35 transition-all duration-700"></div>
+
+                <!-- Main Glassmorphism Presentation Card -->
+                <div id="mainCurationCard" class="relative glass-card rounded-[2.5rem] p-8 sm:p-10 shadow-2xl border border-white/60 dark:border-white/10 flex flex-col justify-between items-center text-center overflow-hidden min-h-[460px] xs:min-h-[500px]">
+                    
+                    <!-- Decorative Emblem Top -->
+                    <div class="flex flex-col items-center gap-1.5 mb-6">
+                        <span class="text-[9px] tracking-[0.2em] font-sans font-bold text-slate-400 dark:text-slate-500 uppercase">Seodeokjun Phrase</span>
+                        <div class="w-6 h-[1px] bg-slate-300 dark:bg-slate-700"></div>
+                        <i id="cardEmblemIcon" class="fa-solid fa-wind text-[#2C5E8A] dark:text-[#8CBAE6] text-xs mt-1 animate-pulse"></i>
+                    </div>
+
+                    <!-- Phrase Text Container -->
+                    <div class="my-auto py-4">
+                        <p id="curatedSentenceText" class="font-poetic text-base xs:text-lg sm:text-xl font-bold text-[#1E3345] dark:text-slate-100 leading-loose tracking-wide whitespace-pre-line drop-shadow-sm transition-all duration-500">
+                            <!-- Injected Dynamically -->
+                        </p>
+                    </div>
+
+                    <!-- Stamp & Footer Information -->
+                    <div class="mt-8 pt-6 border-t border-slate-200/50 dark:border-white/5 w-full flex flex-col items-center gap-4">
+                        <div class="flex items-center gap-2">
+                            <span class="text-[10px] font-semibold border border-slate-300 dark:border-slate-700 px-2 py-0.5 rounded-full text-slate-500 dark:text-slate-400 font-sans tracking-widest">詩</span>
+                            <span class="font-poetic text-xs font-bold text-[#2C5E8A] dark:text-[#8CBAE6] tracking-wider">서덕준 시선</span>
+                        </div>
+
+                        <!-- Card Action Buttons -->
+                        <div class="flex gap-2.5 w-full justify-center">
+                            <button onclick="copyCuratedText()" class="flex-1 max-w-[140px] inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-full bg-[#2C5E8A]/10 hover:bg-[#2C5E8A]/20 dark:bg-white/5 dark:hover:bg-white/10 text-xs text-[#2C5E8A] dark:text-[#8CBAE6] font-bold transition-all border border-slate-200/50 dark:border-slate-700/50 active:scale-95" title="문구 복사">
+                                <i class="fa-regular fa-copy text-xs"></i> 문구 담아가기
+                            </button>
+                            <button onclick="resetCuration()" class="flex-1 max-w-[140px] inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-full bg-[#FF8A65] hover:bg-[#ff764d] text-xs text-white font-bold shadow-sm transition-all active:scale-95" title="다시 고르기">
+                                <i class="fa-solid fa-rotate-left text-xs"></i> 다시 뽑기
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Storytelling Loading skeleton -->
+            <div id="curationLoading" class="hidden max-w-sm mx-auto flex flex-col items-center justify-center text-center p-12 glass-card rounded-3xl min-h-[300px]">
+                <div class="relative w-16 h-16 flex items-center justify-center mb-6">
+                    <div class="absolute inset-0 rounded-full border-4 border-[#2C5E8A]/10 border-t-[#FF8A65] animate-spin"></div>
+                    <i class="fa-solid fa-cloud-rain text-2xl text-[#2C5E8A] animate-bounce"></i>
+                </div>
+                <p id="loadingMsg" class="font-poetic font-bold text-sm xs:text-base text-[#2C5E8A] dark:text-[#8CBAE6] leading-relaxed transition-all"></p>
+                <span class="text-[10px] text-slate-400 mt-2 font-sans tracking-widest">그대 마음에 내린 비를 모으는 중</span>
             </div>
         </div>
     </section>
@@ -532,40 +618,40 @@
         </div>
     </section>
 
-    <!-- Comments Section (Guestbook) -->
-    <section id="comments" class="py-16 xs:py-24 relative px-4 xs:px-6 z-10 bg-gradient-to-b from-transparent to-white/10 dark:to-slate-900/10 transition-colors">
+    <!-- Visitor Comments Section (방명록: 그대를 남기는 문장들) -->
+    <section id="board" class="py-16 xs:py-24 relative px-4 xs:px-6 z-10 bg-gradient-to-b from-transparent to-[#E6F0FA] dark:to-[#0B131E] transition-colors">
         <div class="max-w-4xl mx-auto w-full">
-            <div class="text-center mb-12">
-                <span class="text-[10px] sm:text-xs font-bold text-[#FF8A65] dark:text-[#FFA085] tracking-widest uppercase block mb-3 transition-colors">Guestbook</span>
+            <div class="text-center mb-10 xs:mb-14">
+                <span class="text-[10px] sm:text-xs font-bold text-[#FF8A65] dark:text-[#FFA085] tracking-widest uppercase block mb-3 transition-colors">Communication Space</span>
                 <h2 class="font-poetic text-2xl sm:text-3xl md:text-4xl font-bold text-[#2C5E8A] dark:text-[#A1C7E8] transition-colors">그대를 남기는 문장들</h2>
                 <div class="w-8 h-[2px] bg-[#FF8A65] dark:bg-[#FFA085] mx-auto my-3 sm:my-4 transition-colors"></div>
-                <p class="text-xs sm:text-sm text-[#1E3345] dark:text-slate-300 font-bold max-w-md mx-auto transition-colors">이 여름의 한 조각, 당신의 다정한 마음을 이곳에 적어주세요.</p>
+                <p class="text-xs sm:text-sm text-[#1E3345] dark:text-slate-300 font-bold max-w-md mx-auto transition-colors">이곳에 그대의 맑은 여름 흔적을 한 줄의 글로 흘려보내 주세요.</p>
             </div>
 
-            <!-- Comment Write Box -->
-            <div class="glass-card p-5 xs:p-6 sm:p-8 rounded-3xl shadow-lg border border-white/80 dark:border-white/5 mb-8 transition-colors">
-                <form id="commentForm" class="space-y-4">
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <div class="w-full sm:w-1/3">
-                            <label for="commentName" class="block text-xs font-bold text-[#2C5E8A] dark:text-[#8CBAE6] mb-1.5 transition-colors">이름 (닉네임)</label>
-                            <input type="text" id="commentName" required maxlength="10" placeholder="이름을 적어주세요" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white/60 dark:bg-slate-800/60 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#2C5E8A]/40 text-[#1E3345] dark:text-slate-200 transition-all">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <!-- Write Comment Block -->
+                <div class="md:col-span-5 glass-card p-5 xs:p-6 sm:p-8 rounded-3xl shadow-xl h-fit border border-white/60 dark:border-white/5">
+                    <h3 class="font-poetic text-lg font-bold text-[#2C5E8A] dark:text-[#8CBAE6] mb-4 transition-colors">새로운 문장 적기</h3>
+                    
+                    <form id="commentForm" onsubmit="handleCommentSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-[10px] sm:text-xs font-bold text-slate-500 dark:text-slate-400 mb-1.5 font-sans">그대의 이름 (필명)</label>
+                            <input type="text" id="commentAuthor" required maxlength="12" class="w-full px-4 py-2.5 rounded-xl border border-[#2C5E8A]/20 dark:border-slate-700/50 bg-white/70 dark:bg-slate-800/50 text-[#1E3345] dark:text-slate-100 text-xs sm:text-sm focus:outline-none focus:border-[#2C5E8A] dark:focus:border-[#8CBAE6] transition-all" placeholder="시 속에 머물다 갈 이름">
                         </div>
-                        <div class="w-full sm:w-2/3">
-                            <label for="commentContent" class="block text-xs font-bold text-[#2C5E8A] dark:text-[#8CBAE6] mb-1.5 transition-colors">문장 남기기</label>
-                            <input type="text" id="commentContent" required maxlength="150" placeholder="시와 여름에 관한 따뜻한 감상을 남겨주세요." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white/60 dark:bg-slate-800/60 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#2C5E8A]/40 text-[#1E3345] dark:text-slate-200 transition-all">
+                        <div>
+                            <label class="block text-[10px] sm:text-xs font-bold text-slate-500 dark:text-slate-400 mb-1.5 font-sans">남길 마음 조각</label>
+                            <textarea id="commentContent" required maxlength="140" rows="4" class="w-full px-4 py-3 rounded-xl border border-[#2C5E8A]/20 dark:border-slate-700/50 bg-white/70 dark:bg-slate-800/50 text-[#1E3345] dark:text-slate-100 text-xs sm:text-sm focus:outline-none focus:border-[#2C5E8A] dark:focus:border-[#8CBAE6] transition-all resize-none" placeholder="따뜻하고 고운 이야기 (140자 이내)"></textarea>
                         </div>
-                    </div>
-                    <div class="flex justify-end pt-2">
-                        <button type="submit" class="w-full sm:w-auto px-6 py-2.5 bg-[#2C5E8A] dark:bg-[#3B72A1] text-white rounded-xl text-xs font-bold hover:bg-[#1E3345] dark:hover:bg-[#4A85B8] transition-all shadow-md active:scale-95 flex items-center justify-center gap-1.5">
-                            <i class="fa-solid fa-feather-pointed"></i> 등록하기
+                        <button type="submit" class="w-full py-3 bg-[#2C5E8A] dark:bg-[#3B72A1] text-white hover:bg-[#1E3345] dark:hover:bg-[#4A85B8] active:scale-[0.98] rounded-xl text-xs sm:text-sm font-bold shadow-md transition-all flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-feather"></i> 문장 등록하기
                         </button>
-                    </div>
-                </form>
-            </div>
+                    </form>
+                </div>
 
-            <!-- Comment List Container -->
-            <div id="commentList" class="space-y-4 max-h-[500px] overflow-y-auto pr-2">
-                <!-- Dynamic Comments will render here -->
+                <!-- Display Comments Block -->
+                <div class="md:col-span-7 flex flex-col gap-4 max-h-[500px] overflow-y-auto pr-2" id="commentsContainer">
+                    <!-- Loaded dynamically via JS -->
+                </div>
             </div>
         </div>
     </section>
@@ -825,107 +911,6 @@
             }
         }
 
-        // --- 3. Guestbook (Comments) System ---
-        let comments = [
-            {
-                id: 1,
-                name: "여름의 조각",
-                content: "소낙비라는 시를 읽고 나니 정말 제 마음속에도 싱그러운 여름비가 가득 차는 것 같아요.",
-                date: "2026.07.13",
-                likes: 12,
-                avatarBg: "bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300"
-            },
-            {
-                id: 2,
-                name: "푸른 바람",
-                content: "서덕준 시인의 여름 시선집은 언제나 제 침대맡에 놓여있어요. 영원히 이 아름다운 여름에 살고 싶습니다.",
-                date: "2026.07.12",
-                likes: 8,
-                avatarBg: "bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300"
-            }
-        ];
-
-        const avatarBgs = [
-            "bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300",
-            "bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300",
-            "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300",
-            "bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300",
-            "bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300",
-            "bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300"
-        ];
-
-        function renderComments() {
-            const listEl = document.getElementById('commentList');
-            if (!listEl) return;
-            
-            listEl.innerHTML = comments.map(c => `
-                <div class="glass-card p-4 sm:p-5 rounded-2xl border border-white/60 dark:border-white/10 flex items-start gap-3 sm:gap-4 transition-all duration-300 hover:shadow-md">
-                    <div class="w-10 h-10 rounded-full shrink-0 flex items-center justify-center font-bold text-sm ${c.avatarBg || 'bg-[#2C5E8A]/10 text-[#2C5E8A] dark:bg-[#8CBAE6]/10 dark:text-[#8CBAE6]'}">
-                        ${c.name.charAt(0)}
-                    </div>
-                    <div class="flex-1 min-w-0 text-left">
-                        <div class="flex items-center justify-between gap-2 mb-1">
-                            <h4 class="text-xs sm:text-sm font-bold text-[#2C5E8A] dark:text-[#8CBAE6] truncate">${c.name}</h4>
-                            <span class="text-[10px] text-slate-400 dark:text-slate-500 font-medium shrink-0">${c.date}</span>
-                        </div>
-                        <p class="text-xs sm:text-sm text-[#1E3345] dark:text-slate-200 font-medium leading-relaxed break-words">${c.content}</p>
-                        <div class="flex justify-end gap-2 mt-2">
-                            <button onclick="likeComment(${c.id})" class="text-[10px] sm:text-xs text-[#FF8A65] dark:text-[#FFA085] hover:scale-105 transition-all flex items-center gap-1 font-semibold">
-                                <i class="fa-regular fa-heart"></i> 공감 <span class="font-sans font-bold" id="comment-like-${c.id}">${c.likes}</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        document.getElementById('commentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const nameInput = document.getElementById('commentName');
-            const contentInput = document.getElementById('commentContent');
-            if (!nameInput || !contentInput) return;
-
-            const name = nameInput.value.trim();
-            const content = contentInput.value.trim();
-            if (!name || !content) return;
-
-            const date = new Date().toLocaleDateString('ko-KR', {
-                year: 'numeric',
-                month: '2-digit',
-                day: '2-digit'
-            }).replace(/\. /g, '.').slice(0, -1);
-
-            const randomBg = avatarBgs[Math.floor(Math.random() * avatarBgs.length)];
-
-            const newComment = {
-                id: Date.now(),
-                name,
-                content,
-                date,
-                likes: 0,
-                avatarBg: randomBg
-            };
-
-            comments.unshift(newComment);
-            renderComments();
-
-            nameInput.value = '';
-            contentInput.value = '';
-            showToast("다정한 마음이 담긴 방명록이 남겨졌습니다.");
-        });
-
-        function likeComment(id) {
-            const comment = comments.find(c => c.id === id);
-            if (comment) {
-                comment.likes += 1;
-                const likeCountEl = document.getElementById(`comment-like-${id}`);
-                if (likeCountEl) {
-                    likeCountEl.innerText = comment.likes;
-                }
-                showToast("글에 따스한 공감을 표했습니다.");
-            }
-        }
-
         // Toast display utility helper (Responsive adaptation built-in)
         function showToast(msg) {
             const toast = document.getElementById('copyToast');
@@ -962,13 +947,254 @@
 
         // Initialize Window Functions
         window.addEventListener('resize', resizeCanvas);
-        
+
+        // --- 3. Genuine Emotion Curation Card Picker Logic (Verified Real Poems Only) ---
+        const sentenceDatabase = {
+            flutter: [
+                "너를 그리며 새벽엔 글을 썼고\n내 시의 팔 할은 모두 너를 가리켰다.\n너를 붉게 사랑하며 했던 말들은\n전부 잔잔한 노래였으며\n너는 나에게 한 편의 아름다운 시였다.\n\n- 서덕준, 「너의 의미」 중에서",
+                "좋아, 네게 기꺼이 빠져보도록 하지.\n달갑게 잠수해볼게 깊이조차 알 수 없는 너에게\n나 영영토록 가라앉아보도록 하지.\n\n- 서덕준, 「잠수부」 중에서",
+                "당신은 사막 위 나비의 날갯짓이어요.\n그대 사뿐히 걸어보소서.\n흩날리는 머릿결에도 내 마음엔 폭풍이 일고\n나는 당신께 수몰되리니.\n\n- 서덕준, 「나비효과」 중에서",
+                "누가 그렇게\n하염없이 어여뻐도 된답니까.\n\n- 서덕준, 「능소화」 중에서"
+            ],
+            yearning: [
+                "마음가에 한참 너를 두었다.\n네가 고여있다보니\n그리움이라는 이끼가 나를 온통 뒤덮는다.\n나는 오롯이 네 것이 되어버렸다.\n\n- 서덕준, 「이끼」 중에서",
+                "네가 새벽을 좋아했던 까닭에\n새벽이면 네가 생각나는 것일까.\n아, 아니지.\n네가 새벽을 좋아해서가 아니라\n내가 너를 좋아해서였구나.\n\n- 서덕준, 「새벽」 중에서",
+                "당신은 사전에 실리지 않은 그리움\n당신과 내가 하나 되는 문장을 위해서\n내 모든 생애를 바쳐 시를 쓰는 밤\n당신을 기어이 사랑해서 오늘도 밤이 깊다.\n\n- 서덕준, 「당신을 기어이 사랑해서 오늘도 밤이 깊다」 중에서",
+                "당신이 나의 들숨과 날숨이라면\n그 사이 찰나의 멈춤은\n당신을 향한 나의 숨 멎는 사랑이어라.\n\n- 서덕준, 「호흡」 중에서"
+            ],
+            lonely: [
+                "네게는 찰나였을 뿐인데\n나는 여생을 연신 콜록대며\n너를 앓는 일이 잦았다.\n\n- 서덕준, 「환절기」 중에서",
+                "너는 몇 겹의 계절이고 나를 애태웠다.\n너를 앓다 못해 바짝 말라서\n성냥불만 한 너의 눈짓 하나에도\n나는 화형 당했다.\n\n- 서덕준, 「장작」 중에서",
+                "험난한 이별 탓에 물 한 모금 마시지 못했는데\n갈라진 입술엔 메마른 파도만 일렁대는데\n당신 생각으로 말미암아 솟는 이 울음은\n대체 어디서 길어올린 것인지요.\n\n- 서덕준, 「속눈썹의 우물」 중에서",
+                "하늘은 흐리다가도 개면 그만이건만.\n온통 너로 멍든 내 하늘은\n울적하단 말로 표현이 되려나.\n\n- 서덕준, 「멍」 중에서"
+            ],
+            comfort: [
+                "누구도 믿지 않는 허구의 전설이 너라면\n나는 질긴 목숨처럼 믿기로 했어.\n\n- 서덕준, 「밤의 유영」 중에서",
+                "고요한 항해를 시작해요\n한 호흡을 우리 동시에 잇다가\n함께 숨을 참고\n\n- 서덕준, 「고요한 항해」 중에서",
+                "더운 마음은 쉽사리 식지 않죠.\n나는 여름 탓을 하기로 해요.\n\n- 서덕준, 「여름 증후군」 중에서",
+                "과연 당신의 몇 음절이\n차마 못 다 헤는 통증으로\n나를 잠영하게 만드는가.\n\n- 서덕준, 「당신의 깊이」 중에서"
+            ]
+        };
+
+        const loadingTexts = [
+            "그대 마음에 내리는 비를 받아 적는 중입니다...",
+            "여름바람 틈으로 시인의 한 구절을 데려오는 중...",
+            "햇볕에 그늘진 마음을 가만히 보듬는 중...",
+            "아스라한 여름밤 아래 문장의 조각을 고르는 중..."
+        ];
+
+        let selectedSentence = "";
+
+        function curateSentence(emotion) {
+            const selector = document.getElementById('emotionSelector');
+            const cardContainer = document.getElementById('curationCardContainer');
+            const loader = document.getElementById('curationLoading');
+            const loadingMsg = document.getElementById('loadingMsg');
+
+            // Set dynamic loading message
+            loadingMsg.innerText = loadingTexts[Math.floor(Math.random() * loadingTexts.length)];
+
+            // Animation transition
+            selector.classList.add('opacity-40', 'pointer-events-none');
+            cardContainer.classList.add('hidden');
+            loader.classList.remove('hidden');
+
+            setTimeout(() => {
+                // Select sentence randomly based on emotion key
+                const pool = sentenceDatabase[emotion];
+                selectedSentence = pool[Math.floor(Math.random() * pool.length)];
+                
+                // Set text
+                document.getElementById('curatedSentenceText').innerText = selectedSentence;
+
+                // Adjust styles of card based on emotion theme
+                const aura = document.getElementById('cardAura');
+                const icon = document.getElementById('cardEmblemIcon');
+                
+                if (emotion === 'flutter') {
+                    aura.className = "absolute inset-0 rounded-[2.5rem] blur-2xl opacity-20 group-hover:opacity-40 transition-all duration-700 bg-gradient-to-tr from-[#FF8A65] to-orange-300";
+                    icon.className = "fa-solid fa-heart text-[#FF8A65] text-xs mt-1 animate-pulse";
+                } else if (emotion === 'yearning') {
+                    aura.className = "absolute inset-0 rounded-[2.5rem] blur-2xl opacity-20 group-hover:opacity-40 transition-all duration-700 bg-gradient-to-tr from-[#2C5E8A] to-sky-300";
+                    icon.className = "fa-solid fa-water text-[#2C5E8A] text-xs mt-1 animate-pulse";
+                } else if (emotion === 'lonely') {
+                    aura.className = "absolute inset-0 rounded-[2.5rem] blur-2xl opacity-20 group-hover:opacity-40 transition-all duration-700 bg-gradient-to-tr from-indigo-500 to-slate-400";
+                    icon.className = "fa-solid fa-moon text-indigo-400 text-xs mt-1 animate-pulse";
+                } else {
+                    aura.className = "absolute inset-0 rounded-[2.5rem] blur-2xl opacity-20 group-hover:opacity-40 transition-all duration-700 bg-gradient-to-tr from-emerald-400 to-teal-300";
+                    icon.className = "fa-solid fa-leaf text-emerald-400 text-xs mt-1 animate-pulse";
+                }
+
+                loader.classList.add('hidden');
+                cardContainer.classList.remove('hidden');
+                cardContainer.classList.add('animate-fade-in-up');
+
+                // Smooth scroll view into cards on mobile
+                if (window.innerWidth < 640) {
+                    cardContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }, 1200);
+        }
+
+        function resetCuration() {
+            const selector = document.getElementById('emotionSelector');
+            const cardContainer = document.getElementById('curationCardContainer');
+            
+            selector.classList.remove('opacity-40', 'pointer-events-none');
+            cardContainer.classList.add('hidden');
+            
+            showToast("새로운 감정 조각을 선택해 보세요.");
+        }
+
+        function copyCuratedText() {
+            if (!selectedSentence) return;
+            
+            const fullText = `${selectedSentence}\n\n- 서덕준 시선 『그대의 여름이 될 문장들』 중에서`;
+            
+            const tempTexarea = document.createElement('textarea');
+            tempTexarea.value = fullText;
+            document.body.appendChild(tempTexarea);
+            tempTexarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTexarea);
+
+            showToast("시적 구절이 곱게 복사되었습니다.");
+        }
+
+        // --- 4. Interactive Guestbook Board Logic ---
+        let comments = [];
+        const pastelColors = [
+            { bg: 'bg-[#FF8A65]/20', text: 'text-[#FF8A65]' },
+            { bg: 'bg-[#2C5E8A]/20', text: 'text-[#2C5E8A]' },
+            { bg: 'bg-emerald-500/20', text: 'text-emerald-600' },
+            { bg: 'bg-indigo-500/20', text: 'text-indigo-600' },
+            { bg: 'bg-purple-500/20', text: 'text-purple-600' },
+            { bg: 'bg-amber-500/20', text: 'text-amber-600' }
+        ];
+
+        function loadComments() {
+            const stored = localStorage.getItem('seo_comments');
+            if (stored) {
+                comments = JSON.parse(stored);
+            } else {
+                // Mock seed data with poetic summer touch
+                comments = [
+                    {
+                        id: 1,
+                        author: "여름아이",
+                        content: "『그대는 나의 여름이 되세요』를 읽고 제 사계절도 온통 여름처럼 눈부시게 푸르러졌어요. 시인의 소낙비가 늘 그립습니다.",
+                        date: "2026.07.10",
+                        likes: 12,
+                        avatarColorIdx: 1
+                    },
+                    {
+                        id: 2,
+                        author: "별무리",
+                        content: "다크 모드로 켜놓고 빗소리와 함께 시들을 읽으니 마음의 상처들이 은은하게 치유되는 기분이에요. 정말 고운 사이트 고맙습니다.",
+                        date: "2026.07.12",
+                        likes: 8,
+                        avatarColorIdx: 3
+                    }
+                ];
+                localStorage.setItem('seo_comments', JSON.stringify(comments));
+            }
+            renderComments();
+        }
+
+        function renderComments() {
+            const container = document.getElementById('commentsContainer');
+            container.innerHTML = "";
+
+            if (comments.length === 0) {
+                container.innerHTML = `
+                    <div class="glass-card p-8 rounded-3xl text-center text-slate-400 dark:text-slate-500 font-poetic">
+                        <i class="fa-solid fa-water text-3xl mb-3 opacity-50"></i>
+                        <p class="text-sm font-bold">아직 남겨진 여름 흔적이 없습니다.<br>첫 번째 문장의 주인공이 되어주세요.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            // Render from newest to oldest
+            [...comments].reverse().forEach(comment => {
+                const color = pastelColors[comment.avatarColorIdx || 0];
+                const initial = comment.author.charAt(0);
+
+                const card = document.createElement('div');
+                card.className = "glass-card p-5 rounded-2xl border border-white/50 dark:border-white/5 shadow-md flex gap-4 animate-fade-in-up items-start";
+                card.innerHTML = `
+                    <div class="w-10 h-10 rounded-full ${color.bg} ${color.text} flex items-center justify-center font-bold text-sm shrink-0 uppercase">
+                        ${initial}
+                    </div>
+                    <div class="flex-1 space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span class="font-poetic font-bold text-xs sm:text-sm text-[#2C5E8A] dark:text-[#8CBAE6]">${comment.author}</span>
+                            <span class="text-[10px] text-slate-400 font-sans">${comment.date}</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-medium leading-relaxed font-sans whitespace-pre-wrap">${comment.content}</p>
+                        <div class="flex justify-end pt-1">
+                            <button onclick="likeComment(${comment.id})" class="text-[10px] sm:text-xs text-rose-500 hover:scale-105 active:scale-95 transition-all flex items-center gap-1 font-semibold">
+                                <i class="fa-solid fa-heart text-xs"></i> 공감 <span class="font-sans font-bold">${comment.likes}</span>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function handleCommentSubmit(event) {
+            event.preventDefault();
+            const authorInput = document.getElementById('commentAuthor');
+            const contentInput = document.getElementById('commentContent');
+
+            const author = authorInput.value.trim();
+            const content = contentInput.value.trim();
+
+            if (!author || !content) return;
+
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const dd = String(today.getDate()).padStart(2, '0');
+            const formattedDate = `${yyyy}.${mm}.${dd}`;
+
+            const newComment = {
+                id: Date.now(),
+                author: author,
+                content: content,
+                date: formattedDate,
+                likes: 0,
+                avatarColorIdx: Math.floor(Math.random() * pastelColors.length)
+            };
+
+            comments.push(newComment);
+            localStorage.setItem('seo_comments', JSON.stringify(comments));
+
+            // Reset Form & Update View
+            authorInput.value = "";
+            contentInput.value = "";
+            renderComments();
+            showToast("그대의 소중한 고백이 등록되었습니다.");
+        }
+
+        function likeComment(id) {
+            const index = comments.findIndex(c => c.id === id);
+            if (index !== -1) {
+                comments[index].likes += 1;
+                localStorage.setItem('seo_comments', JSON.stringify(comments));
+                renderComments();
+                showToast("의견에 따뜻한 공감을 표했습니다.");
+            }
+        }
+
+        // --- 5. Application Load Entry point ---
         window.onload = function() {
             initTheme();
             resizeCanvas();
             animateRain();
-            startTypingEffect(); // 타이핑 애니메이션 시작
-            renderComments(); // 댓글 초기 렌더링
+            startTypingEffect(); // Start title typewriter animation
+            loadComments();      // Fetch real or seeded guestbook statements
         };
     </script>
 </body>
